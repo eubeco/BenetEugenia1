@@ -23,7 +23,10 @@ public class TestRPN_JUnit extends TestCase{
 		assertEquals(3D,calc3.resultado());
 		
 		RPN calc4 = new RPN("5 2 4 16 + / +");		
-		assertEquals(5.100000D,calc4.resultado());
+		assertEquals(5.100000D,calc4.resultado());		
+
+		RPN calc12 = new RPN("3 3 ^");		
+		assertEquals(27.000000D,calc12.resultado());
 				
 		//Casos no válidos
 //		RPN calc5 = new RPN("patata");		
