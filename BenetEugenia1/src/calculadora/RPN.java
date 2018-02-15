@@ -1,19 +1,19 @@
 package calculadora;
 
 public class RPN {
-	public void pushPila(double nuevo_dato) {
-		NodoPila nuevo_nodo = new NodoPila(nuevo_dato, arriba);
-		arriba = nuevo_nodo;
-	}
-	public double popPila( ) {
-		double dato_arriba = arriba.dato;
-		arriba = arriba.abajo;
-		return dato_arriba;
-	}
+	
+	private String commando;	
+	private Pila objPila;
+
+	
 	public RPN(String commando) {
-		arriba = null;
+		
+		objPila = new Pila();		
 		this.commando = commando;
 	}
+	
+	
+	
 	public double resultado( ) {
 		double a, b;
 		int j;
@@ -30,42 +30,40 @@ public class RPN {
 				}
 				// convertir a double y añadir a la pila
 				numero = Double.parseDouble(temp);
-				pushPila(numero);
+				objPila.pushPila(numero);
 			} else if(commando.charAt(i) == '+') {
-				b = popPila( );
-				a = popPila( );
-				pushPila(a + b);
+				b = objPila.popPila();
+				a = objPila.popPila();
+				objPila.pushPila(a + b);
 			} else if(commando.charAt(i) == '-') {
-				b = popPila( );
-				a = popPila( );
-				pushPila(a - b);
+				b = objPila.popPila();
+				a = objPila.popPila();
+				objPila.pushPila(a - b);
 			} else if(commando.charAt(i) == '*') {
-				b = popPila( );
-				a = popPila( );
-				pushPila(a * b);
+				b = objPila.popPila();
+				a = objPila.popPila();
+				objPila.pushPila(a * b);
 			} else if(commando.charAt(i) == '/') {
-				b = popPila( );
-				a = popPila( );
-				pushPila(a / b);
+				b = objPila.popPila();
+				a = objPila.popPila();
+				objPila.pushPila(a / b);
 			}
 			else if(commando.charAt(i) == '^') {
-				b = popPila( );
-				a = popPila( );
-				pushPila(Math.pow(a, b));}
+				b = objPila.popPila();
+				a = objPila.popPila();
+				objPila.pushPila(Math.pow(a, b));}
 			else if(commando.charAt(i) == '%') {
-				b = popPila( );
-				a = popPila( );
-				pushPila(a%b);
+				b = objPila.popPila();
+				a = objPila.popPila();
+				objPila.pushPila(a%b);
 			} else if(commando.charAt(i) != ' ') {
 				throw new IllegalArgumentException( );
 			}
 		}
-		double val = popPila( );
-		if(arriba != null) {
+		double val = objPila.popPila();
+		if(objPila.getArriba() != null) {
 			throw new IllegalArgumentException( );
 		}
 		return val;
 	}
-	private String commando;
-	private NodoPila arriba;
 }

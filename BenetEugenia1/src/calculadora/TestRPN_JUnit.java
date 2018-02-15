@@ -26,27 +26,27 @@ public class TestRPN_JUnit extends TestCase{
 		assertEquals(5.100000D,calc4.resultado());
 				
 		//Casos no válidos
-		RPN calc5 = new RPN("patata");		
-		assertEquals(-4.000000D,calc5.resultado());
-		
-		RPN calc6 = new RPN("* 5 3");		
-		assertEquals(8,calc6.resultado());
-		
-		RPN calc7 = new RPN("2 3 4 5");		
-		assertEquals(-4.000000D,calc7.resultado());
-		
-		RPN calc8 = new RPN("5 8 9 /");		
-		assertEquals(-4.000000D,calc8.resultado());
-		
-		RPN calc9 = new RPN("6 0 /");		
-		assertEquals(-4.000000D,calc9.resultado());
-		
-		RPN calc10 = new RPN("10 4 3 + 2 * -");		
-		assertEquals(-4.000000D,calc10.resultado());		
-		
-		RPN calc11 = new RPN("1 1 1 +");
-		assertEquals(-4.000000D,calc11.resultado());
-		
+//		RPN calc5 = new RPN("patata");		
+//		assertEquals(-4.000000D,calc5.resultado());
+//		
+//		RPN calc6 = new RPN("* 5 3");		
+//		assertEquals(8,calc6.resultado());
+//		
+//		RPN calc7 = new RPN("2 3 4 5");		
+//		assertEquals(-4.000000D,calc7.resultado());
+//		
+//		RPN calc8 = new RPN("5 8 9 /");		
+//		assertEquals(-4.000000D,calc8.resultado());
+//		
+//		RPN calc9 = new RPN("6 0 /");		
+//		assertEquals(-4.000000D,calc9.resultado());
+//		
+//		RPN calc10 = new RPN("10 4 3 + 2 * -");		
+//		assertEquals(-4.000000D,calc10.resultado());		
+//		
+//		RPN calc11 = new RPN("1 1 1 +");
+//		assertEquals(-4.000000D,calc11.resultado());
+//		
 	}
 	
 }
