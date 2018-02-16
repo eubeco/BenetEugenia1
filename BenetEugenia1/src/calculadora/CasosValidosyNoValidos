@@ -1,0 +1,29 @@
+Se ha incluido una clase TesRPN donde se prueba con JUnit
+los casos válidos y los no válidos siguientes:
+
+Casos válidos
+
+	Caso de prueba		Rtdo. Obtenido	Rtdo. Esperado ¿Válido?	Motivo
+		10 4 3 + 2 * -		-4.000000D		-4.000000D	Sí				
+		
+		9 2 %						1D  			1D	Sí	
+		
+		1 1 1 + +					3D				3D	Sí
+		
+		5 2 4 16 + / +		 5.100000D		 5.100000D	Sí				
+		
+		3 3 ^				27.000000D		27.000000D  Sí			
+		
+		4 5 * 7 2 / - 3 %	 1.500000D		 1.500000D  Sí
+		
+		6 0 /				Infinity		Infinity	Sí		
+		
+Casos no válidos
+
+		patata				IlegalArgumentException		No		Expresión de entrada no válida  
+		
+		* 5 3				NullPointerException		No		Expresión de entrada no válida
+		
+		2 3 4 5				StringIndexOutOfBoundsException No válido Expresión de entrada no válida
+		
+		
