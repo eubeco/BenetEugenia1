@@ -1,4 +1,5 @@
 package calculadora;
+/** Nodo de Pila */
 /*
 Objetivo: Obtener código refactorizado a partir de otro que no lo está.
 Tarea: Para esta tarea, se refactorizará un programa mal escrito, 
@@ -16,6 +17,11 @@ class NodoPila {
 	public NodoPila abajo;
 	public double dato;	
 	
+	/**Constructor de la clase NodoPila
+	 * 
+	 * @param dato  campo de la clase de tipo double 
+	 * @param abajo NodoPila campo de la clase de tipo NodoPila
+	 */
 	public NodoPila(double dato, NodoPila abajo) {
 		this.dato = dato;
 		this.abajo = abajo;

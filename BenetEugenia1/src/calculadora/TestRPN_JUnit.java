@@ -1,5 +1,11 @@
 package calculadora;
 
+/** 
+ * 
+ *  Prueba calculadora RPN mediante JUnit 
+ * 
+ * 
+ * */
 
 import org.junit.*;
 import junit.framework.TestCase;
@@ -26,14 +32,18 @@ public class TestRPN_JUnit extends TestCase{
 		assertEquals(5.100000D,calc4.resultado());		
 
 		RPN calc12 = new RPN("3 3 ^");		
-		assertEquals(27.000000D,calc12.resultado());
-				
+		assertEquals(27.000000D,calc12.resultado());			
+		
+		RPN calc13 = new RPN("4 5 * 7 2 / - 3 %");		
+		assertEquals(1.500000D,calc13.resultado());
+		
+		
 		//Casos no válidos
 //		RPN calc5 = new RPN("patata");		
 //		assertEquals(-4.000000D,calc5.resultado());
 //		
 //		RPN calc6 = new RPN("* 5 3");		
-//		assertEquals(8,calc6.resultado());
+//		assertEquals(15,calc6.resultado());
 //		
 //		RPN calc7 = new RPN("2 3 4 5");		
 //		assertEquals(-4.000000D,calc7.resultado());
